@@ -27,5 +27,6 @@
         - CriticalUpdates
         - UpdateRollups
       state: installed
-      reboot: no
+      reboot: yes
+      reboot_timeout: 3600
       log_path: C:\ansible_wu.txt
