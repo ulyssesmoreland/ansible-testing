@@ -1,6 +1,6 @@
 ---
 - name: win_reboot module 
-  hosts: MMS-015000-L 
+  hosts: all 
   become: false 
   gather_facts: false 
   tasks:
@@ -8,4 +8,4 @@
       ansible.windows.win_reboot:
         msg: "reboot by Ansible"
         pre_reboot_delay: 10
-        post_reboot_delay: 15 
+        post_reboot_delay: 15
