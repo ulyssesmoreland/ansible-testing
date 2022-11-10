@@ -1,0 +1,36 @@
+---
+- name: windows updates
+  hosts: all
+  tasks:
+  - name:  Search all security, critical, rollup updates, and log to C:\ansible_wu.txt
+    ansible.windows.win_updates:
+      category_names:
+        - SecurityUpdates
+        - CriticalUpdates
+        - UpdateRollups
+      state: searched
+      reboot: no
+      reboot_timeout: 1800
+      log_path: C:\ansible_wu.txt
+
+  - name:  Download all security, critical, rollup updates, and log to C:\ansible_wu.txt
+    ansible.windows.win_updates:
+      category_names:
+        - SecurityUpdates
+        - CriticalUpdates
+        - UpdateRollups
+      state: downloaded
+      reboot: no
+      reboot_timeout: 1800
+      log_path: C:\ansible_wu.txt
+
+  - name:  Install all security, critical, rollup updates, and log to C:\ansible_wu.txt
+    ansible.windows.win_updates:
+      category_names:
+        - SecurityUpdates
+        - CriticalUpdates
+        - UpdateRollups
+      state: installed
+      reboot: no
+      reboot_timeout: 1800
+      log_path: C:\ansible_wu.txt
